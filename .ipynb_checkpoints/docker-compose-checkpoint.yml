@@ -1,7 +1,8 @@
 version: "3.7"
 services:
   ml_container:
-    image: "tatsuki1107/ml_training"
+    image: "tatsuki1107/ml_training:updated"
+    container_name: ml_training
     volumes:
       - ./:/work
     ports:
