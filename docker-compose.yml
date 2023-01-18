@@ -5,11 +5,8 @@ services:
     container_name: ml_training
     volumes:
       - .:/app/work
-      - python_poetry_dockerhub:/app/
     ports:
       - 8888:8888
     command: poetry run jupyter lab --allow-root --ip=0.0.0.0 --LabApp.token=""
     tty: true
 
-volumes:
-  python_poetry_dockerhub:

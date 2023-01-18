@@ -21,6 +21,13 @@ def generate_simulation_data(simulation):
         X = np.random.uniform(-2*np.pi, 2*np.pi, [N, 2])
         y = 10*np.sin(X[:, 0]) + X[:, 1] + epsilon
 
+    elif simulation == 3:
+        beta = np.array([0, 1])
+        mu = np.array([0, 0])
+        Sigma = np.array([[1, 0.95], [0.95, 1]])
+        X = np.random.multivariate_normal(mu, Sigma, N)
+        y = X@beta + epsilon
+
     return train_test_split(X, y, test_size=0.2, random_state=42)
 
 

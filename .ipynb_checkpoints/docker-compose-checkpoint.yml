@@ -1,10 +1,12 @@
 version: "3.7"
 services:
   ml_container:
-    image: "tatsuki1107/ml_training:updated"
+    image: tatsuki1107/python_poetry
     container_name: ml_training
     volumes:
-      - ./:/work
+      - .:/app/work
     ports:
       - 8888:8888
+    command: poetry run jupyter lab --allow-root --ip=0.0.0.0 --LabApp.token=""
     tty: true
+
